@@ -41,7 +41,7 @@ module Trello
 
         result = JSON.generate(checklists_details.first.merge(payload.merge(idBoard: boards_details.first['id'])))
 
-        expected_payload = {name: "Test Checklist", idBoard: "abcdef123456789123456789"}
+        expected_payload = {name: "Test Checklist", idCard: "abcdef123456789123456789"}
 
         expect(client)
           .to receive(:post)

@@ -36,7 +36,6 @@ module Trello
       def create(options)
         client.create(:checklist,
                       'name' => options[:name],
-                      'idBoard' => options[:board_id],
                       'idCard'  => options[:card_id])
       end
     end
@@ -71,7 +70,6 @@ module Trello
 
       client.post("/checklists", {
           name: name,
-          idBoard: board_id,
           idCard: card_id
       }).json_into(self)
     end
